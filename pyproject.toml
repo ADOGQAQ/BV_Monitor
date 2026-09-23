@@ -1,0 +1,29 @@
+[project]
+name = "5050-sc-monitor"
+version = "1.4.4"
+description = "SC Monitor for 5050"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp==3.9.5",
+    "blivedm>=0.1.1",
+    "brotli>=1.0.9",
+    "pillow>=12.2.0",
+    "pydantic>=2.13.4",
+    "qrcode>=7.4.2",
+]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.21.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main", "gui", "config", "blive_handler", "bilibili_client", "bilibili_qr_login", "monitor_utils", "sc_store", "utils"]
+
+[tool.uv.sources]
+blivedm = { git = "https://github.com/xfgryujk/blivedm.git", rev = "dev" }
